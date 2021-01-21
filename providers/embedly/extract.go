@@ -1,7 +1,7 @@
 package embedly
 
 import (
-	"code.as/embedas/embed-api/providers/embedly/extract"
+	"code.as/embedas/go-embed/providers/embedly/extract"
 	"encoding/json"
 	"errors"
 	"fmt"
