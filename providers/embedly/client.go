@@ -1,7 +1,7 @@
 package embedly
 
 var (
-	Host = "http://api.embed.ly"
+	Host = "https://api.embed.ly"
 )
 
 type Client struct {
