@@ -1,6 +1,7 @@
 package embed
 
 type Options struct {
+	MaxWidth int
 }
 
 type Response struct {

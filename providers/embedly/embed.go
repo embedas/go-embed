@@ -50,6 +50,7 @@ func (c *Client) embed(urls []string, options embed.Options) ([]embed.Response, 
 
 	q := u.Query()
 	q.Add("key", c.key)
+	addInt(&q, "maxwidth", options.MaxWidth)
 
 	for i, u := range urls {
 		urls[i] = url.QueryEscape(u)
