@@ -1,9 +1,9 @@
 package embedly
 
 import (
-	"code.as/embedas/go-embed/providers/embedly/embed"
 	"encoding/json"
 	"fmt"
+	"github.com/embedas/go-embed/providers/embedly/embed"
 	"io/ioutil"
 	"net/http"
 	"net/url"

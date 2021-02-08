@@ -1,10 +1,10 @@
 package embedly
 
 import (
-	"code.as/embedas/go-embed/providers/embedly/extract"
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/embedas/go-embed/providers/embedly/extract"
 	"io/ioutil"
 	"net/http"
 	"net/url"
