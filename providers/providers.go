@@ -19,13 +19,20 @@ var embedHostDomains = map[string]*regexp.Regexp{
 	"gph.is":                nil,
 	"gist.github.com":       nil,
 	"gfycat.com":            nil,
+	"hypem.com":             nil,
 	"imgur.com":             nil,
 	"instagr.am":            regexp.MustCompile("/p/.+"),
 	"www.instagram.com":     regexp.MustCompile("/p/.+"),
 	"www.kickstarter.com":   regexp.MustCompile("/projects/.+/.+"),
+	"www.last.fm":           regexp.MustCompile("/music/.+"),
+	"www.mixcloud.com":      nil,
+	"www.rdio.com":          nil,
+	"open.spotify.com":      nil,
 	"quora.com":             nil,
 	"www.quora.com":         nil,
 	"share.getcloudapp.com": nil,
+	"soundcloud.com":        nil,
+	"snd.sc":                nil,
 	"twitter.com":           regexp.MustCompile("/.+/status/.+"),
 	"imgs.xkcd.com":         nil,
 	"xkcd.com":              nil,
@@ -54,6 +61,7 @@ func EmbedURL(us string) bool {
 	// Ensure domain is from a supported provider
 	ex, domainOK := embedHostDomains[u.Host]
 	domainOK = domainOK ||
+		strings.HasSuffix(u.Host, ".bandcamp.com") ||
 		strings.HasSuffix(u.Host, ".tumblr.com") ||
 		strings.HasSuffix(u.Host, ".typeform.com")
 	if !domainOK {
