@@ -15,6 +15,7 @@ const (
 	TypeError = "error"
 )
 
+// Response is a rich media response from the Embed.ly API.
 type Response struct {
 	OriginalURL     string    `json:"original_url"`
 	URL             string    `json:"url"`
@@ -42,6 +43,7 @@ type Response struct {
 	Images          []Image   `json:"images"`
 }
 
+// Author represents author data.
 type Author struct {
 	Name string `json:"name"`
 	URL  string `json:"url"`

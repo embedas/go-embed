@@ -1,9 +1,11 @@
 package embed
 
+// Options are properties that can be sent to the Embed API.
 type Options struct {
 	MaxWidth int
 }
 
+// Response is a rich media response from the Embed API.
 type Response struct {
 	URL          string `json:"url"`
 	ErrorCode    int    `json:"error_code"`

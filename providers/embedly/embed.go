@@ -10,6 +10,7 @@ import (
 	"strings"
 )
 
+// Embed returns rich media responses for the given URLs.
 func (c *Client) Embed(options embed.Options, urls ...string) ([]embed.Response, error) {
 	responses := make([]embed.Response, len(urls))
 	for i := 0; i < len(urls); i += 10 {
@@ -33,7 +34,7 @@ func (c *Client) Embed(options embed.Options, urls ...string) ([]embed.Response,
 	return responses, nil
 }
 
-// Shortcut for extracting one url.
+// EmbedOne returns a rich media response for a single URL.
 func (c *Client) EmbedOne(options embed.Options, url string) (*embed.Response, error) {
 	responses, err := c.embed([]string{url}, options)
 	if err != nil {

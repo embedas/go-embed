@@ -51,6 +51,8 @@ var embedHostDomains = map[string]*regexp.Regexp{
 	"www.youtube.com":       nil,
 }
 
+// EmbedURL returns whether or not the given URL is supported. If true, the
+// client should fetch the rich media for the URL.
 func EmbedURL(us string) bool {
 	u, err := url.Parse(us)
 	if err != nil {

@@ -1,5 +1,6 @@
 package extract
 
+// Options are properties that can be sent to the Extract API.
 type Options struct {
 	MaxWidth     int
 	MaxHeight    int
