@@ -1,3 +1,4 @@
+// Package providers interacts with all supported Embed.as providers.
 package providers
 
 import (

@@ -1,3 +1,4 @@
+// Package embed holds models for Embed.ly's Embed API.
 package embed
 
 // Options are properties that can be sent to the Embed API.

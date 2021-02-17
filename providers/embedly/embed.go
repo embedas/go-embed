@@ -1,3 +1,4 @@
+// Package embedly interacts with Embed.ly's APIs.
 package embedly
 
 import (

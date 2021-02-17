@@ -1,3 +1,4 @@
+// Package extract holds models for Embed.ly's Extract API.
 package extract
 
 // Options are properties that can be sent to the Extract API.
