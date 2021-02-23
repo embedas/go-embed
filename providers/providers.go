@@ -38,6 +38,7 @@ var embedHostDomains = map[string]*regexp.Regexp{
 	"imgs.xkcd.com":         nil,
 	"xkcd.com":              nil,
 	"www.xkcd.com":          nil,
+	"youtu.be":              nil,
 	"youtube.ca":            nil,
 	"youtube.jp":            nil,
 	"youtube.com.br":        nil,
