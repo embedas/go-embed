@@ -69,7 +69,6 @@ func EmbedURL(us string) bool {
 		strings.HasSuffix(u.Host, ".tumblr.com") ||
 		strings.HasSuffix(u.Host, ".typeform.com")
 	if !domainOK {
-		log.Printf("unsupported domain: %s", u.Host)
 		return false
 	}
 
