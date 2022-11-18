@@ -29,4 +29,5 @@ Embed.as API client written in Go (golang). Works with Embed.ly for now, and our
 - Quora
 - SoundCloud
 - Twitter
+- Vimeo
 - YouTube
