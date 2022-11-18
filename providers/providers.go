@@ -35,6 +35,7 @@ var embedHostDomains = map[string]*regexp.Regexp{
 	"soundcloud.com":        nil,
 	"snd.sc":                nil,
 	"twitter.com":           regexp.MustCompile("/.+/status/.+"),
+	"vimeo.com":             nil,
 	"imgs.xkcd.com":         nil,
 	"xkcd.com":              nil,
 	"www.xkcd.com":          nil,
