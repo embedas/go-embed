@@ -11,6 +11,7 @@ import (
 var embedHostDomains = map[string]*regexp.Regexp{
 	"airtable.com":          nil,
 	"www.are.na":            nil,
+	"bsky.app":              regexp.MustCompile("/profile/.+/post/.+"),
 	"cinnamon.video":        nil,
 	"codepen.io":            nil,
 	"flic.kr":               nil,
@@ -35,6 +36,7 @@ var embedHostDomains = map[string]*regexp.Regexp{
 	"soundcloud.com":        nil,
 	"snd.sc":                nil,
 	"twitter.com":           regexp.MustCompile("/.+/status/.+"),
+	"x.com":                 regexp.MustCompile("/.+/status/.+"),
 	"vimeo.com":             nil,
 	"imgs.xkcd.com":         nil,
 	"xkcd.com":              nil,
