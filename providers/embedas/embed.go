@@ -26,7 +26,7 @@ func (c *Client) EmbedOne(rawURL string) (*Response, error) {
 }
 
 func (c *Client) embed(rawURL string) (*Response, error) {
-	u, err := url.Parse(Host + "/api")
+	u, err := url.Parse(c.baseURL() + "/api")
 	if err != nil {
 		return nil, fmt.Errorf("url.Parse: %s", err)
 	}

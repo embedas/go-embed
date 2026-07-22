@@ -2,7 +2,7 @@
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/embedas/go-embed.svg)](https://pkg.go.dev/github.com/embedas/go-embed)
 
-Embed.as API client written in Go (golang). Works with Embed.ly for now, and our own embed service in the future.
+Embed.as API client written in Go (golang), for fetching embeddable media to include in Write.as blogs. Works with Embed.ly for now, and our own embed service (Embed.as) soon.
 
 ## Supported Providers
 
