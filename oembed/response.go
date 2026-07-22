@@ -1,8 +1,6 @@
 // Package oembed holds the shared oEmbed response model.
 package oembed
 
-import embedapi "github.com/embedas/api"
-
 // Response is a standard oEmbed response.
 type Response struct {
 	URL          string `json:"url"`
@@ -26,5 +24,3 @@ type Response struct {
 	ThumbnailWidth  int    `json:"thumbnail_width"`
 	ThumbnailHeight int    `json:"thumbnail_height"`
 }
-
-func NewResponse(r embedapi.OEmbedResponse) *Response {}
