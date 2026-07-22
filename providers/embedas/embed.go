@@ -5,13 +5,14 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"strconv"
 )
 
 // Embed returns rich media responses for the given URLs.
-func (c *Client) Embed(urls ...string) ([]Response, error) {
+func (c *Client) Embed(options Options, urls ...string) ([]Response, error) {
 	responses := make([]Response, len(urls))
 	for i, u := range urls {
-		res, err := c.embed(u)
+		res, err := c.embed(options, u)
 		if err != nil {
 			return nil, err
 		}
@@ -21,11 +22,11 @@ func (c *Client) Embed(urls ...string) ([]Response, error) {
 }
 
 // EmbedOne returns a rich media response for a single URL.
-func (c *Client) EmbedOne(rawURL string) (*Response, error) {
-	return c.embed(rawURL)
+func (c *Client) EmbedOne(options Options, rawURL string) (*Response, error) {
+	return c.embed(options, rawURL)
 }
 
-func (c *Client) embed(rawURL string) (*Response, error) {
+func (c *Client) embed(options Options, rawURL string) (*Response, error) {
 	u, err := url.Parse(c.baseURL() + "/api")
 	if err != nil {
 		return nil, fmt.Errorf("url.Parse: %s", err)
@@ -33,6 +34,9 @@ func (c *Client) embed(rawURL string) (*Response, error) {
 
 	q := u.Query()
 	q.Set("url", rawURL)
+	if options.MaxWidth > 0 {
+		q.Set("maxwidth", strconv.Itoa(options.MaxWidth))
+	}
 	u.RawQuery = q.Encode()
 
 	resp, err := http.DefaultClient.Get(u.String())
