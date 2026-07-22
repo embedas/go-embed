@@ -39,7 +39,15 @@ func (c *Client) embed(options Options, rawURL string) (*Response, error) {
 	}
 	u.RawQuery = q.Encode()
 
-	resp, err := http.DefaultClient.Get(u.String())
+	req, err := http.NewRequest(http.MethodGet, u.String(), nil)
+	if err != nil {
+		return nil, fmt.Errorf("NewRequest: %s", err)
+	}
+	if c.key != "" {
+		req.Header.Set("X-API-Key", c.key)
+	}
+
+	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
 		return nil, fmt.Errorf("GET: %s", err)
 	}

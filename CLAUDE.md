@@ -28,8 +28,8 @@ This library has three layers:
 - `providers/providers.go`: The `EmbedURL(url string) bool` function determines whether a given URL is from a supported media provider. It uses a map of host domains to optional `*regexp.Regexp` path validators. Domains with `nil` regexps allow any path; those with a regexp require the path to match. Some providers (Bandcamp, Tumblr, Typeform) use subdomain suffix matching instead.
 
 **`providers/embedas/` — Embed.as API client** (preferred)
-- `embed.go`: `Embed(options, urls...)` / `EmbedOne(options, url)` fetch `GET {host}/api?url=...` and decode the JSON oEmbed response. No API key — third-party provider keys are configured server-side on the Embed.as instance.
-- `client.go`: `NewClient()` talks to the default `Host` (`https://embed.as`); `NewClientWithHost(host)` targets a custom base URL (e.g. `http://embed.local` for local development). An empty host falls back to `Host`.
+- `embed.go`: `Embed(options, urls...)` / `EmbedOne(options, url)` fetch `GET {host}/api?url=...` and decode the JSON oEmbed response. Third-party *provider* keys are configured server-side on the Embed.as instance; the *caller's* Embed.as API key (below) is sent as the `X-API-Key` header.
+- `client.go`: `NewClient(key)` talks to the default `Host` (`https://embed.as`); `NewClientWithHost(host, key)` targets a custom base URL (e.g. `http://embed.local` for local development). An empty host falls back to `Host`; an empty key sends no `X-API-Key` header (for instances that don't require auth).
 - `model.go`: `Response` is an alias for the shared `oembed.Response`. `Options` carries request hints — currently `MaxWidth`, sent as the `maxwidth` query param when greater than 0 (0 leaves sizing to the API's server-side default).
 
 **`oembed/` — shared oEmbed response model**
